@@ -1,4 +1,3 @@
-//This code is copied from shree1999 and having some optimizing
 /* Creating Queue using Two Stacks
 Here let us see how it works
 1. s1 stores all the data that has been enqueue
@@ -21,11 +20,11 @@ public:
     }
 
     void deQueue() {
-        if(s1.empty() && s2.empty()) { // check for empty condition
+        if(s1.empty() /*&& s2.empty()*/) { // check for empty condition //noo need to check s2
             cout<<"Please Insert Data"<<endl;
             return;
         }
-        if(s2.empty()) { // checking for stack 2 is empty or not
+        if(s2.empty()) { // checking for stack 2 is empty or not    //why check this?
             while(!s1.empty()) {
                 s2.push(s1.top());  // in this we copy s1 to s2
                 s1.pop(); // pop element from s1
